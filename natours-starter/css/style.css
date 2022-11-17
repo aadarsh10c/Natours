@@ -236,6 +236,37 @@ body {
   animation-timing-function: move-in;
 }
 
+.composition {
+  position: relative;
+}
+.composition__img {
+  position: absolute;
+  width: 55%;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
+}
+.composition__img--1 {
+  left: 4rem;
+  top: -1rem;
+}
+.composition__img--2 {
+  right: 0;
+  top: 1rem;
+}
+.composition__img--3 {
+  left: 25%;
+  top: 10rem;
+}
+.composition__img:hover {
+  outline: 1.5rem solid #55c57a;
+  outline-offset: 1.4rem;
+  transform: translateY(-1rem) scale(1.03);
+  z-index: 10;
+}
+.composition:hover:not(.composition__img:hover) {
+  transform: scale(0.99);
+}
+
 .section-about {
   background-color: #f7f7f7;
   padding: 16rem 0;
