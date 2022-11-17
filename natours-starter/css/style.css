@@ -1,0 +1,254 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+*, *::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", "sans-serif";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+}
+
+.heading-secondary {
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skewX(15deg) skewY(5deg) scale(1.1);
+  text-shadow: 0.2rem 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.para-heading {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-botttom-large {
+  margin-bottom: 5rem;
+}
+
+.u-bottom-mid {
+  margin-bottom: 2rem;
+}
+
+.u-bottom-small {
+  margin-bottom: 0.5rem;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(135deg, rgba(126, 213, 111, 0.5725490196), rgba(40, 180, 133, 0.5490196078)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+.header__logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+.header__logo {
+  height: 35px;
+}
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.row {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.row [class^=col-] {
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 3rem;
+}
+.row .col-1-of-2 {
+  width: calc((100% - 3rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 6rem) / 3);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 9rem) / 4);
+}
+.row .col-2-of-3 {
+  width: calc(2 * (100% - 6rem) / 3 + 3rem);
+}
+.row .col-2-of-4 {
+  width: calc(2 * (100% - 9rem) / 4 + 3rem);
+}
+.row .col-3-of-4 {
+  width: calc(3 * (100% - 9rem) / 4 + 6rem);
+}
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: None;
+  text-transform: uppercase;
+  padding: 10px 35px;
+  transition: all 0.2s;
+  position: relative;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+.btn:hover::after {
+  transform: scaleX(1.3) scaleY(1.4);
+  opacity: 0;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.2s;
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+.btn--white {
+  background-color: #fff;
+  color: #777;
+  border-radius: 100px;
+}
+.btn--white::after {
+  background-color: #fff;
+}
+.btn--animated {
+  animation: moveInBottom 0.6s ease-out 0.75s backwards;
+}
+
+.anch-text:link, .anch-text:visited {
+  color: #55c57a;
+  text-decoration: none;
+  border-bottom: 2px solid #55c57a;
+  display: inline-block;
+  transition: all 0.4s;
+}
+.anch-text:hover {
+  transform: translateY(-3px);
+  color: #fff;
+  background-color: #55c57a;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
+}
+.anch-text:active {
+  transform: translateY(1px);
+}
+
+.header-primary {
+  color: #fff;
+  margin-bottom: 60px;
+}
+.header-primary--main {
+  display: block;
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: 20px;
+  animation: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: move-in;
+}
+.header-primary--sub {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 7.7px;
+  animation: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: move-in;
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 16rem 0;
+  margin-top: -20vh;
+}
+
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/*# sourceMappingURL=style.css.map */

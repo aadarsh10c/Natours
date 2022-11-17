@@ -1,0 +1,28 @@
+@use '../base/animation' as *;
+@use '../abstracts/variables' as *;
+
+.header-primary{
+    color: $color-white;
+    margin-bottom: 60px;
+
+    &--main{
+        display:block;
+        font-size: 5rem;
+        font-weight: 400;
+        letter-spacing: 20px;
+        animation: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: move-in;
+    }
+    
+    &--sub{
+        display:block;
+        font-size: 1.7rem;
+        font-weight: 700;
+        letter-spacing: 7.7px;
+        animation: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function: move-in;
+    }
+    
+}
