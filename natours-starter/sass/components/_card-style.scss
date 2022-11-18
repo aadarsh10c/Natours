@@ -1,0 +1,27 @@
+@use '../abstracts/variables' as *;
+
+.card{
+    background-color: rgba(255,255,255,0.8);
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 2rem 3rem rgba(black, .25);
+    & :not(:last-child){
+        display:block;
+        margin-bottom: 1.2rem;
+    }
+    transition: all .3s;
+    &:hover{
+        transform: translateY(-1rem) scale(1.03);
+    }
+
+    & .icon-gradient{
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
