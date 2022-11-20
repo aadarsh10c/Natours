@@ -1,0 +1,17 @@
+.box-front{
+ background-color: white;
+ box-shadow: 0 1rem 3rem rgba(black, .35);  
+ margin-bottom: 3rem; 
+ border-radius: 3px;
+ &--body{
+    text-align: center;
+    position: relative;
+    width: 60%;
+    left:20%;
+   
+ }
+ &--text{
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(119,119,119,0.15) ;
+ }
+}
