@@ -328,7 +328,7 @@ body {
   background-image: linear-gradient(to right bottom, #7cd9d6, #279bb2);
 }
 .box:hover .box-front {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 .box:hover .box-back {
   transform: rotateY(0deg);
