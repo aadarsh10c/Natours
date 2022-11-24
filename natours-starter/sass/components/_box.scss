@@ -1,27 +1,116 @@
 @use '../abstracts/variables' as *;
 
 .box{
-   height: 40rem;
+   height: 50rem;
    position:relative;
    perspective: 150rem;
+
+   //image container style
+   .img-container{
+      background-size: cover;
+      overflow: hidden;
+   }
    
-   &-front{
+   &__front{
       position: absolute;
       background-color: white;
-      height:40rem;
+      height:100%;
       width: 100%;
       backface-visibility: hidden;
       box-shadow: 0 .5rem 3rem rgba($color: #000000, $alpha: 0.3);
       transition: all 0.8s;
-      &-container{
-         height: 10rem;
+      
+   }
+   &__picture{
+      height: 20rem;
+      background-size: cover;
+      overflow: hidden;
+      background-blend-mode: screen;
+      -webkit-clip-path: polygon(0 0 ,100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0 ,100% 0, 100% 85%, 0 100%);
+      &--1{
+         background-image: linear-gradient(to right bottom,
+         $color-primary-light,
+         $color-primary-dark),
+         url(../img/nat-5.jpg);
+      }
+      &--2{
+         background-image: linear-gradient(to right bottom,
+         $color-secondary-light,
+         $color-secondary-dark),
+         url(../img/nat-6.jpg);
+      }
+      &--3{
+         background-image: linear-gradient(to right bottom,
+         $color-tertiary-light,
+         $color-tertiary-dark),
+         url(../img/nat-7.jpg);
+      }
+
+   }
+   &__header{
+      font-size: 2.6rem;
+      position: absolute;
+      top:10rem;
+      right:1rem;
+      color: white;
+      width: 60%;
+      text-transform: uppercase;
+      text-align: right;
+      
+      
+      
+      
+   }
+   &__span{
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      padding: .8rem 1rem;
+      
+      &--1{
+         background-image: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+         );
+      }
+      &--2{
+         background-image: linear-gradient(
+            to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark
+         );
+      }
+      &--3{
+         background-image: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+         );
+         
       }
    }
-   &-back{
-      position: absolute;
-      
+   &__body{
+      list-style: none;
+      width:80%;
+      margin: 1rem auto 0;
+      text-align: center;
+      text-transform: capitalize;
+      & > li:not(:last-child){
+         border-bottom: 1px solid #ddd;
+         margin: 1rem;
+
+      }
+      & > li{
+         padding: 1rem;
+      }
+
+   }
+   &__back{
+      position: absolute;      
       height: 40rem;
       width: 100%;
+      height:100%;
       backface-visibility: hidden;
       transform: rotateY(180deg);
       transition: all 0.8s;
@@ -43,13 +132,32 @@
          $color-tertiary-light,
          $color-tertiary-dark);
       }
+      &-container{
+         color: white;
+         text-align: center;
+         position:absolute;
+         top:50%;
+         left:50%;
+         transform: translate(-50%, -50%);
+         &-detail{
+            margin-bottom: 4rem;
+         }
+      }
+      &_price{
+         font-size: 1.6rem;
+         text-transform: uppercase;
+      }
+      &_value{
+         font-size: 6rem;
+         font-weight: 300;
+      }
 
    }
    
-   &:hover &-front{
+   &:hover &__front{
       transform: rotateY(-180deg);
    }
-   &:hover &-back{
+   &:hover &__back{
       transform: rotateY(0deg);
    }
 }
