@@ -92,6 +92,10 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.u-top-large {
+  margin-top: 10rem;
+}
+
 .u-icon-size-6 {
   font-size: 6rem;
 }
@@ -430,6 +434,7 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
+  margin-top: -10vh;
 }
 
 /*
