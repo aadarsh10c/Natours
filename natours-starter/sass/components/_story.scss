@@ -23,9 +23,28 @@
         -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skew(12deg);
+        position: relative;
     }
     &__img{
         height: 100%;
-        transform: translateX(-15%);
+        transform: translateX(-15%) scale(1.4);
+        transition: all .5s;
+    }
+    &__cap{
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-30%, 10%);
+        opacity: 0;
+        transition: all .5s;
+    }
+    &:hover &__cap{
+        transform: translate(-30%, -50%);
+        opacity: 1;
+    }
+    &:hover &__img{
+        transform: translateX(-15%) scale(1);
+        filter: blur(3px) brightness(80%);
     }
 }
