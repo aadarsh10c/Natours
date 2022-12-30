@@ -58,3 +58,13 @@
         
     }
 }
+
+.footer{
+    background: black;
+    padding: 1rem;
+    &__img{
+        display: block;
+        width: 15%;
+        margin: 2rem auto;
+    }
+}
