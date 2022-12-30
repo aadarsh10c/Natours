@@ -1,0 +1,38 @@
+@use '../abstracts/variables' as *;
+
+.form__group{
+    &:not(:last-child){
+        padding-bottom: 2rem;
+    }
+    
+}
+.form__input{
+    width: 95%;
+    padding: 1.5rem 2rem;
+    opacity: .4;
+    color: black;
+    font-weight: 700;
+    display: block;
+    &:focus{
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba(black, .05);
+        border-bottom: 3px solid green ;
+    }
+    &:focus:invalid{
+        outline: none;
+        border-bottom: 3px solid orangered ;
+    }
+
+}
+.form__label{
+    display: block;
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    transition: all .3s;
+}
+//placeholder when seen dissappear the label
+.form__input:placeholder-shown + .form__label{
+    opacity: 0;
+    visibility: none;
+    transform: translateY(-3.5rem);
+}
