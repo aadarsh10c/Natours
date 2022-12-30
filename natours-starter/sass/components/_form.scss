@@ -36,3 +36,51 @@
     visibility: none;
     transform: translateY(-3.5rem);
 }
+
+//radio input
+.form__radio{
+    display: none;
+}
+
+.radio{
+    &__group{
+        width: 49%;
+        display: inline-block;
+        position: relative;
+    }
+    &__label{
+        cursor: pointer;
+        padding-left: 3rem;
+    }
+    &__custom{
+        width:3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 3px solid $color-primary-dark;
+        display: inline-block;
+        position: absolute;
+        top: -.25rem;
+        left: -1rem;
+        &::after{
+            content: "";
+            width:2rem;
+            height:2rem;
+            border-radius: 50%;
+            border: 10px solid transparent;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            transition: all .3s;
+
+        }
+    }
+
+}
+.form__radio:checked ~ .radio__label {
+    .radio__custom::after{
+        content: '';
+        border: 10px solid $color-primary-dark;
+    }
+} 
