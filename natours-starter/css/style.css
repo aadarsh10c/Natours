@@ -633,7 +633,30 @@ body {
 .footer__img {
   display: block;
   width: 15%;
-  margin: 2rem auto;
+  margin: 6rem auto;
+}
+.footer__list {
+  list-style: none;
+  color: green;
+  border-top: 1px solid green;
+  padding-top: 1rem 0;
+  display: inline-block;
+}
+.footer__item {
+  display: inline-block;
+}
+.footer__link:link, .footer__link:visited {
+  display: inline-block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.3s;
+}
+.footer__link:hover, .footer__link:active {
+  color: green;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  transform: rotate(5deg) scale(1.1);
 }
 
 /*
