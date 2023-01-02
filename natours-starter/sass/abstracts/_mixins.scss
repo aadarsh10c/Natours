@@ -1,6 +1,18 @@
+@use '../abstracts/variables' as *;
+
+
 @mixin clearfix {
     content: "";
     display: block;
     clear: both;
     
 }
+
+//media queries mixin
+
+@mixin respond( $breakpoint ){
+    @media ( max-width: calc($breakpoint/16px * 1em)){
+        @content
+    }
+}
+
