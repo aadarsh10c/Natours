@@ -1,9 +1,16 @@
 @use '../base/animation' as *;
-@use '../abstracts/variables' as *;
+@use '../abstracts/' as *;
 
 .header-primary{
     color: $color-white;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
+    @include respond ($tab-port){
+        margin-bottom: 4rem;
+    }
+    @include respond ($phone){
+        margin-bottom: 3rem;
+    }
+
 
     &--main{
         display:block;
@@ -13,6 +20,12 @@
         animation: moveInLeft;
         animation-duration: 1s;
         animation-timing-function: move-in;
+        @include respond ($tab-port){
+            font-size: 4rem;
+        }
+        @include respond ($phone){
+            font-size: 3rem;
+        }
     }
     
     &--sub{
@@ -23,6 +36,10 @@
         animation: moveInRight;
         animation-duration: 1s;
         animation-timing-function: move-in;
+        @include respond ($tab-port){
+            font-size: 1.2rem;
+        }
+       
     }
     
 }

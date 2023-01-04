@@ -2,10 +2,12 @@
 
 
 .row{
-    //background-color: $grid-white;
     max-width: $grid-width;
     margin: 0 auto;
     //display: inline-block;
+    @include respond( $tab-port ){
+        max-width: $grid-width-small;
+    }
 
     &:not(:last-child){
         margin-bottom: $gutter-vertical;
@@ -20,9 +22,16 @@
       //  color: white;
         //text-align: center;
         //outline: 3px solid black;
+        @include respond( $tab-port ){
+            width: 100% !important;
+            margin-bottom: 2rem;
+        }
         float:left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;
+            @include respond( $tab-port ){
+                margin-right: 0;
+            }
         }
     }
     .col-1-of-2{

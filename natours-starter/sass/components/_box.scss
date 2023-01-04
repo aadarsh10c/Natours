@@ -1,4 +1,4 @@
-@use '../abstracts/variables' as *;
+@use '../abstracts/' as *;
 
 .box{
    height: 50rem;
@@ -160,5 +160,9 @@
    }
    &:hover &__back{
       transform: rotateY(0deg);
+   }
+   
+   @include respond( $tab-port ){
+
    }
 }

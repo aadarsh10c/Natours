@@ -11,8 +11,17 @@
 //media queries mixin
 
 @mixin respond( $breakpoint ){
-    @media ( max-width: calc($breakpoint/16px * 1em)){
-        @content
+
+    @if $breakpoint < 1800 {
+        @media ( max-width: $breakpoint){
+            @content
+        }
     }
+    @if $breakpoint >= 1800 {
+        @media ( min-width: $breakpoint){
+            @content
+        }
+    }
+    
 }
 
