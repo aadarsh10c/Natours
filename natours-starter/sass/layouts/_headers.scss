@@ -4,11 +4,21 @@
     height: 95vh;
     background-image:linear-gradient(135deg,
     #7ed56f92,
-    #28b4858c ),url(../img/hero.jpg);
+    #28b4858c ),url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    //resolution si 2x and min-width : 600px or if the min width is 2000px
+    @media (min-resolution: 192dpi) and (min-width: 37.5em) ,
+    ( min-width: 125em ){
+        background-image:linear-gradient(135deg,
+        #7ed56f92,
+        #28b4858c ),url(../img/hero.jpg);
+    }
+
+   
     
     @include respond ($tab-port){
         clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
